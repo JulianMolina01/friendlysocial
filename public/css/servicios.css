@@ -1,0 +1,220 @@
+:root{
+    --textsize: calc(1.6vw - .9vh);
+    --textsizesubtitle: calc(2.5vw - .6vh);
+    --textsizetitle: calc(4vw - 1vh);
+    --textsizemobile: calc(2vh + .9vw);
+    --textsizesubtitlemobile: calc(2.5vh + .6vw);
+    --textsizetitlemobile: calc(4vh - 1vw);
+}
+
+html{
+    -webkit-text-size-adjust: none;
+	touch-action: manipulation;
+
+}
+
+.servicios-contenedor{
+    padding: 12%;
+    padding-top: 5%;
+    padding-bottom: 2%;
+}
+
+.servicios-contenedor h1{
+    padding-bottom: 1%;
+    font-size: var(--textsizetitle);
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: stretch;
+    align-items: center;
+}
+
+.servicio{
+    position:inherit;
+    font: helvetica;
+    font-weight: bold;
+    width: 28%;
+    height: auto;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    text-align: center;
+    transition: all 400ms ease;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.servicio h3{
+    font: helvetica;
+    font-weight: bold;
+    font-size: var(--textsizesubtitle);
+    color: rgb(26, 26, 26);
+}
+
+.contenido{
+    height: auto;
+    padding: 2%;
+}
+
+.contenido-text{
+    height: 70%;
+    margin-bottom: 2%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.servicio:hover{
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+    transition-timing-function: ease-in-out;
+}
+
+.servicio img{
+    height: auto;
+    width: 100%;
+    filter: brightness(86%);
+}
+
+.contenido p{
+    font-size: var(--textsize);
+}
+
+.productos-contenedor{
+    padding-top: 5%;
+}
+
+.productos-contenedor h1{
+    text-align: left;
+    font-size: var(--textsizetitle);
+    padding-left: 12%;
+    padding-bottom: 2%;
+}
+
+.contenedor-producto {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+.productos-categoria {
+    position: relative;
+    width: 25%;
+    transition: 1s;
+}
+
+.productos-categoria img {
+    max-width: 100%;
+    width: 100%;
+    height: calc(33vh + 3vw);
+    transition: 1s, width 0.3s ease, transform 0.3s ease; /* Add transition for smooth effect */
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.productos-categoria h3 {
+    font-size: var(--textsizesubtitle);
+    color: #fff;
+    font: helvetica;
+    font-weight: bold;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent; /* Add a transparent background */
+    z-index: 2; /* Increase the z-index to ensure the text is above the image */
+    transition: transform 0.3s ease; /* Add transition for smooth effect */
+}
+
+.productos-categoria:hover {
+    z-index: 1000;
+}
+
+.productos-categoria:hover img {
+    transform: translateY(-12px);
+    width: 26vw;
+    border-radius: 1rem;
+    transition: .8s ease-in-out;
+    z-index: 1; /* Reduce the z-index of the image to make it behind the text */
+}
+
+.productos-categoria:hover h3 {
+    transform: translate(-50%, -90%); /* Adjust the translation to match the image animation */
+}
+
+@media (max-width: 767px) {
+
+    /*Seccion de servicios para dispositivos moviles*/
+    .servicios-contenedor{
+        padding: 6%;
+    }
+    
+    .servicios-contenedor h1{
+        padding-bottom: 2%;
+        font-size: var(--textsizetitlemobile);
+    }
+
+    .contenedor{
+        flex-direction: column;
+    }
+
+    .servicio{
+        margin-bottom: 10%;
+        width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+    .contenido{
+        height: auto;
+        padding: 4%;
+    }
+
+    .contenido h3 {
+        font-size: var(--textsizesubtitlemobile);
+    }
+    .contenido p{
+        margin: 2%;
+        font-size: var(--textsizemobile);
+    }
+
+    .contenido a{
+        margin-bottom: 2%;
+    }
+    
+    /*Seccion de productos para dispositivos moviles*/
+    .contenedor-producto{
+        display: grid;
+        justify-items: center;
+        width: 100%;
+    }
+
+    .productos-contenedor h1{
+        font-size: var(--textsizetitlemobile);
+    }
+
+    .productos-categoria{
+        width: 90%;
+        margin: 4%;
+    }
+
+    .productos-categoria img{
+        border-radius: .5rem;
+    }
+
+    .productos-categoria img:hover{
+        width: 100%;
+    }
+
+    .productos-categoria h3{
+        font-size: var(--textsizesubtitlemobile);
+    }
+}
